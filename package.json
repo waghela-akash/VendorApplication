@@ -1,0 +1,21 @@
+{
+  "name": "vendor_app",
+  "version": "1.0.0",
+  "description": "Lists all the products",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waghela-akash/VendorApplication.git"
+  },
+  "author": "Akash Waghela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waghela-akash/VendorApplication/issues"
+  },
+  "homepage": "https://github.com/waghela-akash/VendorApplication#readme"
+}
