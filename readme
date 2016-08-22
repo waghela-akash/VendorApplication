@@ -1,5 +1,15 @@
+====================================
+Setting up directory
+
 npm init
 
 npm install
 
-create index.js
+
+
+
+
+====================================
+Starting application
+
+sudo service mongodb start

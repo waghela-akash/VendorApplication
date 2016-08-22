@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="CS455_Assignment1">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular Vendor App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+
+	<script src="controllers/main.js"></script> <!-- load up our controller -->
+	<script src="services/items.js"></script> <!-- load our todo service -->
+	<script src="core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER AND TODO COUNT -->
+		<div class="jumbotron text-center">
+			<h1>There are <span class="label label-info">{{ items.length }}</span> Items</h1>
+		</div>
+
+		<!-- TODO LIST -->
+		<div class="row">
+			<div class="col-sm-4">
+
+				<!-- LOOP OVER THE TODOS IN $scope.todos -->
+				<div class="checkbox" ng-repeat="item in items">
+					<label>
+						<input type="checkbox" ng-click="deleteItem(item._id)"> {{ item.name }}
+					</label>
+				</div>
+
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+
+			</div>
+			<div class="col-sm-8"></div>
+		</div>
+
+		<!-- FORM TO CREATE TODOS -->
+		<div class="row">
+			<div class="col-sm-4 text-center">
+				<form>
+					<div class="form-group">
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="Mango" ng-model="formData.name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="10Rs/kg" ng-model="formData.cost">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="100kg" ng-model="formData.quantity">
+					</div>
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createItem()">Add</button>
+				</form>
+			</div>
+			<div class="col-sm-8"></div>
+		</div>
+
+	</div>
+
+</body>
+</html>

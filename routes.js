@@ -40,10 +40,22 @@ module.exports = function (app) {
             if (err)
                 res.send(err);
 
-            getTodos(res);
+            getItemList(res);
         });
     });
+    /*
+    // update an item
+    app.update('/api/items/:item_id', function (req, res) {
+        Item.remove({
+            _id: req.params.item_id
+        }, function (err, item) {
+            if (err)
+                res.send(err);
 
+            getItemList(res);
+        });
+    });
+    */
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/public/index.html'); 
