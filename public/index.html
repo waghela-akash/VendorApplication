@@ -36,6 +36,9 @@
 					<div class="col-sm-6 text-center">
 						<form>
 							<div class="form-group">
+								<label for="sel1">Add an Item by filling the form and then click on "Add" (Note: Fruits may have same name):</label>								
+							</div>
+							<div class="form-group">
 								<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 								<input type="text" class="form-control input-lg text-center" placeholder="Mango" ng-model="formData.name">
 							</div>
@@ -48,11 +51,12 @@
 							<button type="submit" class="btn btn-primary btn-lg" ng-click="createItem()">Add</button>
 						</form>
 					</div>
-					<!--
+					
 					<div class="col-sm-6">
 						<form>
 							<div class="form-group">
-								<label for="sel1">Select list (select one):</label>							
+								<label for="sel1">Select one Item to Update from right after filling the form (by clicking on update):</label>	
+								<!--						
 								<select class="form-control">
 									<option ng-repeat="item in items">
 										{{ item.name }}	
@@ -60,20 +64,19 @@
 										<span class="badge">Quantity: {{item.quantity}}</span>
 
 									</option>
-								</select>
+								</select> -->
 							</div>
-
 							<div class="form-group">									
-								<input type="text" class="form-control input-lg text-center" placeholder="{{item.name}}" ng-model="formData.name">
+								<input type="text" class="form-control input-lg text-center" placeholder="Fruit Name" ng-model="formData1.name">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control input-lg text-center" placeholder="{{item.cost}}" ng-model="formData.cost">
+								<input type="text" class="form-control input-lg text-center" placeholder="Cost per Kg" ng-model="formData1.cost">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control input-lg text-center" placeholder="{{item.quantity}}" ng-model="formData.quantity">
+								<input type="text" class="form-control input-lg text-center" placeholder="Quantity" ng-model="formData1.quantity">
 							</div>								
 						</form>		
-					</div>	-->				
+					</div>			
 				</div>
 			</div>
 			<div class="col-sm-5">				
