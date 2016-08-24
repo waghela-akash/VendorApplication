@@ -33,27 +33,48 @@ angular.module('itemController', [])
 		};
 
 		// DELETE ==================================================================
-		// delete a item after checking it
+		// delete an item after checking it
 		$scope.deleteItem = function(id) {
 			$scope.loading = true;
 
 			Items.delete(id)
 				.success(function(data) {
-					$scope.loading = false;
 					$scope.items = data;
+					$scope.loading = false;					
 				});
 		};
 
 		// UPDATE ==================================================================
-		// update a item after checking it
+		// update an item after checking it
 		$scope.updateItem = function(id) {
 			$scope.loading = true;
 
-			Item.update(id)
+			if ($scope.formData.name != undefined) {
+				$scope.loading = true;
+
+				Items.create($scope.formData)
+					.success(function(data) {
+						$scope.formData = {}; 
+					});
+				Items.delete(id)
 				.success(function(data) {
-					$scope.loading = false;
 					$scope.items = data;
+					$scope.loading = false;					
 				});
-		};
+			}
+
+			
+			/*
+			var query = {'_id' : id};
+			Items.findOne(query, function(err, data) {
+					$scope.loading = false;
+					data.name = $scope.formData.name;
+					data.cost = $scope.formData.cost;
+					data.quantity = $scope.formData.quantity;
+					data.save();
+					//$scope.items = data;
+				});
+			*/
+		};		
 
 	}]);

@@ -43,9 +43,10 @@ module.exports = function (app) {
             getItemList(res);
         });
     });
-    /*
+    
     // update an item
-    app.update('/api/items/:item_id', function (req, res) {
+    /*
+    app.findOne('/api/items/:item_id', function (req, res) {
         Item.remove({
             _id: req.params.item_id
         }, function (err, item) {

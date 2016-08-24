@@ -10,7 +10,7 @@ module.exports = mongoose.model('fruit', {
       required: true
     },
     quantity: {
-      type: Number,
+      type: String,
       required: true
     }
 });

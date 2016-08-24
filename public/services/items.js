@@ -10,9 +10,6 @@ angular.module('itemService', [])
 			},
 			delete : function(id) {
 				return $http.delete('/api/items/' + id);
-			},
-			update : function(id) {
-				return $http.delete('/api/items/' + id);
 			}
 		}
 	}]);
