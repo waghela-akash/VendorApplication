@@ -6,11 +6,11 @@ module.exports = mongoose.model('fruit', {
       required: true
     },
     cost: {
-      type: String,
+      type: Number,
       required: true
     },
     quantity: {
-      type: String,
+      type: Number,
       required: true
     }
 });
